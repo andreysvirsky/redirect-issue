@@ -1,0 +1,41 @@
+.app-header {
+  position: absolute;
+  top: 0;
+  background-color: #c38d9e;
+  width: 100%;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  line-height: 64px;
+}
+
+.nav-logo {
+  padding-left: 24px;
+  padding-right: 24px;
+  background-color: #000;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu-link {
+  padding-left: 24px;
+}
+
+.menu-link:hover {
+  cursor: pointer;
+  color: #000;
+}
+
+.nav-profile {
+  padding-right: 24px;
+}
+
+.nav-userdata {
+  padding-right: 24px;
+}
