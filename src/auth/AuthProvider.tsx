@@ -1,5 +1,5 @@
 import { Auth0Provider } from "@auth0/auth0-react";
-import { useNavigate, Outlet } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import type { PropsWithChildren } from "react";
 import type { AppState } from "@auth0/auth0-react";
 
@@ -18,7 +18,7 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
       onRedirectCallback={onRedirectCallback}
       useRefreshTokens
     >
-      <Outlet />
+      {children}
     </Auth0Provider>
   );
 };
