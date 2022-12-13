@@ -16,7 +16,12 @@
 .nav-logo {
   padding-left: 24px;
   padding-right: 24px;
-  background-color: #000;
+  background-color: #000000;
+}
+
+.nav-logo:hover {
+  cursor: pointer;
+  background-color: #222;
 }
 
 .menu {
@@ -25,11 +30,12 @@
 
 .menu-link {
   padding-left: 24px;
+  padding-right: 24px;
 }
 
 .menu-link:hover {
   cursor: pointer;
-  color: #000;
+  background-color: #af7d8d;
 }
 
 .nav-profile {

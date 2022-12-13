@@ -1,9 +1,9 @@
 import { Auth0Provider } from "@auth0/auth0-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Outlet } from "react-router-dom";
 import type { PropsWithChildren } from "react";
 import type { AppState } from "@auth0/auth0-react";
 
-export const WithAuth0 = ({ children }: PropsWithChildren) => {
+export const AuthProvider = ({ children }: PropsWithChildren) => {
   const navigate = useNavigate();
   const onRedirectCallback = (appState?: AppState) => {
     navigate(appState?.returnTo || window.location.pathname);
@@ -18,7 +18,7 @@ export const WithAuth0 = ({ children }: PropsWithChildren) => {
       onRedirectCallback={onRedirectCallback}
       useRefreshTokens
     >
-      {children}
+      <Outlet />
     </Auth0Provider>
   );
 };
