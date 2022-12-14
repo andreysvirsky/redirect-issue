@@ -1,17 +1,20 @@
-import { BrowserRouter } from "react-router-dom";
-import { AuthProvider } from "./auth/AuthProvider";
+import { useAuth0 } from "@auth0/auth0-react";
 import { Header } from "./components";
 
-import { AppRouter } from "./routes/AppRouter";
+import { AppRoutes } from "./routes/AppRoutes";
 
 function App() {
+  const { isLoading } = useAuth0();
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
   return (
-    <BrowserRouter>
-      <AuthProvider>
-        <Header />
-        <AppRouter />
-      </AuthProvider>
-    </BrowserRouter>
+    <>
+      <Header />
+      <AppRoutes />
+    </>
   );
 }
 

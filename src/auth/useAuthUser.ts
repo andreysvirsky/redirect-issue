@@ -5,11 +5,13 @@ export function useAuthUser() {
   const { user, getAccessTokenSilently, isLoading, error, logout } = useAuth0();
 
   useEffect(() => {
-    getAccessTokenSilently({ detailedResponse: true }).then((response) => {
-      console.log({ response });
-      localStorage.setItem("access-token", response.access_token);
-    });
-  }, []);
+    if (isLoading) {
+      getAccessTokenSilently({ detailedResponse: true }).then((response) => {
+        console.log({ response });
+        localStorage.setItem("access-token", response.access_token);
+      });
+    }
+  }, [isLoading]);
 
   return {
     isUserLoading: isLoading,
