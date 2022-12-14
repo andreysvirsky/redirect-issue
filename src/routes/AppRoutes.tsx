@@ -11,7 +11,7 @@ import { HomePage, PublicPage, ProtectedPage, NotFound } from "../pages";
 import { AuthProvider } from "../auth/AuthProvider";
 import { MainLayout } from "../layouts/MainLayout";
 
-export const AppRouter: FC = () => {
+export const AppRoutes: FC = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route element={<AuthProvider />}>

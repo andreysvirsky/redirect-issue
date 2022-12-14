@@ -14,5 +14,5 @@ export const HomePage: FC = () => {
     }
   }, []);
 
-  return <div>HomePage LOADING...</div>;
+  return <div>Redirecting from Home Page...</div>;
 };
